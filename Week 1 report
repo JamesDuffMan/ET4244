@@ -1,0 +1,46 @@
+ET4244
+Outcome Based Learning Laboratory 2
+Autumn Semester 2019
+
+
+
+Week (teaching week number)
+	Week 1
+Report author
+	James Duffy
+Partner(s)
+	Silvia Fernandez
+Group number
+	4
+Report submission date
+	13.9.19
+
+
+Summary of activities undertaken this week (minimum 90 words, maximum 110 words)
+
+Summary:
+We had our first look at the Arduino IDE and boards. We also installed Python for use in future labs. We used an example program to make a LED blink on and off repeatedly, at custom frequencies. We then set off to create code to make a LED show either green, blue or red. We iterated on this code to make the lights flash on in accordance to a bitwise clock. We then iterated again on this code, to make it work in very specific conditions, with the help of a counter.
+
+
+
+
+
+
+
+
+Actual summary word count:
+
+
+Summary of planned activities for next week (minimum 90 words, maximum 110 words)
+
+Summary:
+
+
+
+
+
+
+
+
+Actual summary word count:
+

@@ -1,0 +1,87 @@
+#define RED 2
+#define GREEN 3
+#define BLUE 4
+#include "U8glib.h"
+
+#define OLED_MOSI   9
+#define OLED_CLK   10
+#define OLED_DC    11
+#define OLED_CS    12
+#define OLED_RESET 8
+
+//U8GLIB_SSD1306_128x64 u8g( OLED_CLK, OLED_MOSI, OLED_CS, OLED_DC );
+
+U8GLIB_SSD1306_128X64 u8g(10, 9, 12, 11, 8);  // SW SPI Com: SCK = 13, MOSI = 11, CS = 10, A0 = 9
+
+void setup(void) 
+{
+ 
+  pinMode(RED, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+  pinMode(BLUE, OUTPUT);
+  
+  digitalWrite(RED, HIGH);
+  digitalWrite(GREEN, HIGH);
+  digitalWrite(BLUE, HIGH);
+
+  pinMode(OLED_RESET, OUTPUT);
+   digitalWrite(OLED_RESET, LOW);
+   delay(1000);
+   digitalWrite(OLED_RESET, HIGH);
+  
+}
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ static int i = 0;
+
+  if(i < 100)
+  {
+  digitalWrite(RED, LOW);
+  digitalWrite(GREEN, HIGH);
+  digitalWrite(BLUE, HIGH);  
+   //red = on
+  
+  u8g.firstPage();  
+  do {
+    u8g.setFont(u8g_font_osb18);
+    u8g.drawStr(0, 20, "Red");
+  } while( u8g.nextPage() );
+  }
+
+  if( i > 100 && i < 200)
+  {
+  digitalWrite(RED, HIGH);
+  digitalWrite(GREEN, LOW);
+  digitalWrite(BLUE, HIGH);
+
+  u8g.firstPage();  
+  do {
+    u8g.setFont(u8g_font_osb18);
+    u8g.drawStr(0, 20, "Green");
+  } while( u8g.nextPage() );
+  }
+
+  if( i >= 200 && i < 256)
+  {
+  digitalWrite(RED, HIGH);
+  digitalWrite(GREEN, HIGH);
+  digitalWrite(BLUE, LOW);
+
+   u8g.firstPage();  
+  do {
+    u8g.setFont(u8g_font_osb18);
+    u8g.drawStr(0, 20, "Blue");
+  } while( u8g.nextPage() );
+  }
+ if(i==255)
+  {
+    i = 0;
+  }
+  else{
+    i = i+1;
+  }
+  
+  delay(5);
+}

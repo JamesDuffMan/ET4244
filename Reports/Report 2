@@ -7,9 +7,9 @@ Autumn Semester 2019
 Week (teaching week number)
 	Week 2
 Report author
-	James Duffy
+	Silvia Fernandez
 Partner(s)
-	Silvia Fer
+	James Duffy, Emmanuel Arogundade
 Group number
 	4
 Report submission date
@@ -19,10 +19,7 @@ Report submission date
 Summary of activities undertaken this week (minimum 90 words, maximum 110 words)
 
 Summary:
-
-
-
-
+In the first part of this laboratory, we have install the library of arduino’s screen. We have tried the examples codes but we had had many problems because in the screen we can’t see clearly the cartoons. We have installed several programs but finally we have achieved this by changing some lines of program code.
 
 
 
@@ -34,10 +31,9 @@ Actual summary word count:
 Summary of planned activities for next week (minimum 90 words, maximum 110 words)
 
 Summary:
+We will going to understand what kind of component is BME280 and next we will conect to arduino. We will have to search on-line sources of information about this. We will install the library necesaries for it to work well. For this, we have to search information about I^2 C comunications protocol.
 
-
-
-
+In the second part, we will have to write an sketch. It have to read the sensor once time per minute
 
 
 

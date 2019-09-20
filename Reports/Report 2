@@ -19,9 +19,9 @@ Report submission date
 Summary of activities undertaken this week (minimum 90 words, maximum 110 words)
 
 Summary:
-In the first part of this laboratory, we have install the library of arduino’s screen. We have tried the examples codes but we had had many problems because in the screen we can’t see clearly the cartoons. We have installed several programs but finally we have achieved this by changing some lines of program code.
+In the first part of this laboratory, we have install the library of arduino’s screen. We have tried the examples codes but we have had many problems because in the screen we can’t see clearly the cartoons. We have installed several programs but finally we have achieved this by changing some lines of program code.
 
-
+In the second part we have recovered the LED's programme of the last week but now we show the name colour in the screen at the same time that the light color light. For this, We change the code writing more lines. We search this lines in the creator's library.
 
 
 

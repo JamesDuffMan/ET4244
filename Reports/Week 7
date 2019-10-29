@@ -1,0 +1,34 @@
+ET4244
+Outcome Based Learning Laboratory 2
+Autumn Semester 2019
+
+
+
+Week (teaching week number)
+	7
+Report author
+	James Duffy
+Partner(s)
+	Silvia F
+Group number
+	4
+Report submission date
+	29/10/19
+	
+
+
+Summary of activities undertaken this week (minimum 90 words, maximum 110 words)
+
+Summary:
+This week we began working on python scrips for the first time, using the Arduino uno and the IDLE interface. We first checked the code to ensure that it was working as intended and noticed that sometimes our altitude would become negative. Having noted this bug and logging it for the final report we moved on to the python scrips. Our goal was to have python automatically read in values from the com port that the uno was connected to and auto output the results to a text file. With the help of Ian and the associated python website we were able to automate the collection of data and have it all save locally in a text file.
+
+
+Actual summary word count:118
+
+
+Summary of planned activities for next week (minimum 90 words, maximum 110 words)
+
+Summary:
+
+Actual summary word count:
+

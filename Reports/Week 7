@@ -29,6 +29,9 @@ Actual summary word count:118
 Summary of planned activities for next week (minimum 90 words, maximum 110 words)
 
 Summary:
+In the following sessions, we will connect our microprocessor to the PC to make and test our interface with Arduino serial monitor. For this we will use Python for set-up serial communications. We will test if it works and correct errors if necessary.
 
-Actual summary word count:
+In the next part, to be able to have more samples and to be able to contrast and study the results better, we will take 25 measures. Five measures in the five places chosen in the previous practices. With these new results we can improve our program.
+
+Actual summary word count:90
 

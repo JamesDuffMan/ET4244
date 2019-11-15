@@ -1,0 +1,89 @@
+#------------------------------------------------------------------
+# File name       : PrintOutResults
+#------------------------------------------------------------------
+# Group number    : 4
+# Group members   : James D & Silvia F
+# Last updated on : 25/10/19
+#------------------------------------------------------------------
+# Module description:
+# Code to save our data into a text file. 
+#
+#------------------------------------------------------------------
+
+#------------------------------------------------------------------
+# Modules to import
+#------------------------------------------------------------------
+
+import time
+import serial
+import datetime
+import csv
+#import pandas as pd
+#import xlwt
+#from xlwt import Workbook
+#from pandas import ExcelWriter
+com_port = 'COM4'
+
+
+#------------------------------------------------------------------
+# def main()
+#------------------------------------------------------------------
+# Main script function
+#------------------------------------------------------------------
+
+def main():
+    f = open("output.txt","w+")
+    #with open('results_file.csv', mode='a') as results_file:
+    #    results_writer = csv.writer(results_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    with open('results_file.csv', mode='a+') as results_file:
+        ser = serial.Serial( com_port )                 #
+        ser.baudrate = 9600
+        ser.flush()
+        
+        for x in range(1, 6):                              #datetime > 1 | datetime < 6 #This while loop is designed to print out the time, then all the values, until we have 5 readings in each area
+            t = (datetime.datetime.now())                  # This will print out the time now using the datetime import
+            f.write('Current date & time: {}'.format(datetime.datetime.now()) + '\n')
+            results_writer = csv.writer(results_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            results_writer.writerow(['New Data'])
+            #results_writer = csv.writer(results_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                #results_writer.writerow([t])
+            #results_writer.writerow([t])
+            reps = 0                                        # Reps is our int that controls how many variables to print out eg if it was 3 it would only print out temp, pressure and altitude
+
+            while (reps < 4):                               # When leaving the while loop we want to return reps to 0 so it will print out once again
+                                                            # Test code to print out current time to terminal f.write(datetime.datetime.now())           
+                line = ser.readline().decode('utf-8')[:-2]  # This code will remove the extra characters and clean the data
+                f.write(line + '\n')                        # This line adds a new line character to clean data
+                print(line)                                 # This line prints out the line
+                results_writer = csv.writer(results_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                results_writer.writerow([line, t])
+                reps = reps + 1                             # Increment reps until it hits 
+            if(x == 5):
+             break
+            time.sleep(20)    
+    f.close()
+    #csv.close()
+#    f = open("output.txt", "r")
+#    df = pd.read_table('output.txt')                      # can replace with df = pd.read_table('input.txt') for '\t'
+#    df.to_excel('output.xlsx', 'Sheet1')
+#    f.close()
+    
+#    print( 'Start script run %s ' % time.strftime( '%c' ) )
+    
+
+    # User code to start here
+
+
+
+#------------------------------------------------------------------
+# Run script only if this is the main module
+#------------------------------------------------------------------
+
+if __name__ == '__main__':
+    
+    main()
+
+#------------------------------------------------------------------
+# End of script
+#------------------------------------------------------------------
+

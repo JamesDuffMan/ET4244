@@ -1,0 +1,25 @@
+Current date & time: 2019-11-08 13:10:28.529798
+Temp = 17.04
+Pressure = 1014.29
+Altitude = -77.72
+Humidity = 47.15
+Current date & time: 2019-11-08 13:11:35.630584
+Temp = 17.07
+Pressure = 1014.28
+Altitude = -77.62
+Humidity = 47.00
+Current date & time: 2019-11-08 13:12:35.695683
+Temp = 17.11
+Pressure = 1014.29
+Altitude = -77.66
+Humidity = 46.63
+Current date & time: 2019-11-08 13:13:35.736296
+Temp = 17.16
+Pressure = 1014.25
+Altitude = -77.32
+Humidity = 46.12
+Current date & time: 2019-11-08 13:14:35.777901
+Temp = 17.21
+Pressure = 1014.27
+Altitude = -77.50
+Humidity = 45.77

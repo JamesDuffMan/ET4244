@@ -1,0 +1,72 @@
+#------------------------------------------------------------------
+# File name       : PrintOutResults
+#------------------------------------------------------------------
+# Group number    : 4
+# Group members   : James D & Silvia F
+# Last updated on : 18/11/19
+#------------------------------------------------------------------
+# Module description:
+# Code to read in data from the com port, and write it out to a .CSV file. 
+#
+#------------------------------------------------------------------
+
+#------------------------------------------------------------------
+# Modules to import
+#------------------------------------------------------------------
+
+import time
+import serial
+import datetime
+import csv
+com_port = 'COM4'
+
+#------------------------------------------------------------------
+# def main()
+#------------------------------------------------------------------
+# Main script function
+#------------------------------------------------------------------
+
+def main():
+    
+    f = open("output.txt","w+")
+                                                                                                                    #Opening the com port to be able to read the data from the arduino.
+    ser = serial.Serial( com_port )                     
+    ser.baudrate = 9600
+    ser.flush()
+                                                                                                                    #We use this for loop to make the program run throigh the loop 6 times to get 5 data readings for each area. We also have this to be able to print out the time value when every result is processed.
+    for x in range(1, 6):                                                                                           #datetime > 1 | datetime < 6 #This while loop is designed to print out the time, then all the values, until we have 5 readings in each area
+        t = (datetime.datetime.now())                                                                               #This will print out the time now using the datetime import
+        f.write('Current date & time: {}'.format(datetime.datetime.now()) + '\n')                                   #This line writes out the datetime value, while formatting it.
+            
+        reps = 0                                                                                                    #Reps is an int that controls how many variables to print out eg if it was 3 it would only print out temp, pressure and altitude
+        matrix = []                                                                                                 #Declaration of the matrix
+
+            
+        while (reps < 4):                                                                                           #When leaving the while loop we want to return reps to 0 so it will print out once again
+                                                                      
+            line = ser.readline().decode('utf-8')[:-2]                                                              #This line will remove the extra characters and clean the data
+            f.write(line + '\n')                                                                                    #This line adds a new line character to clean data
+            print(line)                                                                                             #This line prints out the line value -> the readings
+
+            matrix.insert( reps, line )
+            reps = reps + 1                                                                                         #Increment reps so it won't continiously run this code, we only want to print out 5 readings. 
+
+
+        with open('results_file13.csv', mode='a', newline='' ) as results_fileX:                                    #This code block opens/creates a result file with the append function to continously write data to the same file.
+                results_writer = csv.writer(results_fileX, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                results_writer.writerow( [ t, matrix[0], matrix[1], matrix[2], matrix[3] ]                            
+           
+    f.close()                                                                                                       #Close the file
+
+#------------------------------------------------------------------
+# Run script only if this is the main module
+#------------------------------------------------------------------
+
+if __name__ == '__main__':
+    
+    main()
+
+#------------------------------------------------------------------
+# End of script
+#------------------------------------------------------------------
+
